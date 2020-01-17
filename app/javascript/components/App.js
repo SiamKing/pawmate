@@ -1,13 +1,21 @@
 import React from "react"
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "react-bootstrap/Button";
+import "../stylesheets/application.scss"
+
+import Home from './Home'
+import Navbar from './Navbar'
 
 class App extends React.Component {
   render () {
     return (
-      <React.Fragment>
-        <Button>Button</Button>
-      </React.Fragment>
+      <div>
+        <Router>
+          <Navbar />
+          <Route exact path="/" render={props => <Home {...props} />} />
+        </Router>
+      </div>
     );
   }
 }
