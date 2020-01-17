@@ -11,7 +11,7 @@ export default () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/">Pawmate</Nav.Link>
-          {/* <Nav.Link href="fruits">Fruits</Nav.Link> */}
+          <Nav.Link href="animals">Find a Friend</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

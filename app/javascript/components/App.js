@@ -6,6 +6,7 @@ import "../stylesheets/application.scss"
 
 import Home from './Home'
 import Navbar from './Navbar'
+import AnimalsContainer from './containers/AnimalsContainer'
 
 class App extends React.Component {
   render () {
@@ -14,6 +15,7 @@ class App extends React.Component {
         <Router>
           <Navbar />
           <Route exact path="/" render={props => <Home {...props} />} />
+          <Route exact path="/animals" component={AnimalsContainer} />
         </Router>
       </div>
     );
