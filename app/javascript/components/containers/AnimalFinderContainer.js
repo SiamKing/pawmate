@@ -1,4 +1,5 @@
 import React from "react"
+import { connect } from 'react-redux'
 
 import AnimalFinder from '../animals/AnimalFinder'
 
@@ -10,4 +11,4 @@ class AnimalFinderContainer extends React.Component {
   }
 }
 
-export default AnimalFinderContainer
+export default connect()(AnimalFinderContainer)
