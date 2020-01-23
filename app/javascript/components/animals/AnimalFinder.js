@@ -57,7 +57,7 @@ class AnimalFinder extends Component {
       case 'zipCode':
         const zipCodePattern = /^\d{5}$|^\d{5}-\d{4}$/;
         zipCodeValid = zipCodePattern.test(value)
-        fieldValidationErrors.zipCode = zipCodeValid ? '' : 'Zip Code must contain 5 numbers'
+        fieldValidationErrors.zipCode = zipCodeValid ? '' : ' must contain 5 numbers'
         break;
       
       case 'radius':
@@ -117,19 +117,20 @@ class AnimalFinder extends Component {
     console.log(this.state.searchCriteria)
     return (
       <div className="d-flex flex-column align-content-center">
+        <h3 className="mb-4">Pawmate Finder</h3>
         <div className="panel panel-default">
           <FormErrors formErrors={this.state.formErrors} />
         </div>
         <Form>
-          <Form.Group controlId="formSpecies" className={`form-group ${this.errorClass(this.state.formErrors.species)}`}>
+          <Form.Group controlId="formSpecies" className={this.errorClass(this.state.formErrors.species)}>
             <Form.Control as="select" defaultValue="Select Species" name="species" onChange={this.handleChange}>
               {this.renderSelect(SPECIES)}
             </Form.Control>
           </Form.Group>
-          <Form.Group controlId="formZipCode" className={`form-group ${this.errorClass(this.state.formErrors.zipCode)}`}>
+          <Form.Group controlId="formZipCode" className={this.errorClass(this.state.formErrors.zipCode)}>
             <Form.Control type="text" placeholder="Enter Zip Code" name="zipCode" onChange={this.handleChange} />
           </Form.Group>
-          <Form.Group controlId="formRadius" className={`form-group ${this.errorClass(this.state.formErrors.radius)}`}>
+          <Form.Group controlId="formRadius" className={this.errorClass(this.state.formErrors.radius)}>
             <Form.Control as="select" defaultValue="Select Radius" name="radius" onChange={this.handleChange}>
               {this.renderSelect(RADIUSES)}
             </Form.Control>
