@@ -8,13 +8,15 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 
 import App from '../components/App'
+import manageAnimals from '../reducers/manageAnimals'
+import configureStore, { history } from '../store/configureStore'
 
-const store = createStore()
+const store = createStore(manageAnimals)
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <App history={history} />
     </Provider>,
     document.body.appendChild(document.createElement("div"))
   );
