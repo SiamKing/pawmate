@@ -1,14 +1,20 @@
-import React from "react"
+import React, { Component } from "react"
 import { connect } from 'react-redux'
 
 import AnimalFinder from '../animals/AnimalFinder'
 
-class AnimalFinderContainer extends React.Component {
-  render () {
+class AnimalFinderContainer extends Component {
+
+  handleDispatch = (searchFields) => {
+    debugger
+  }
+  render() {
     return (
-      <AnimalFinder />
+      <div>
+        <AnimalFinder handleDispatch={this.handleDispatch} />
+      </div>
     );
   }
 }
 
-export default connect()(AnimalFinderContainer)
+export default AnimalFinderContainer
